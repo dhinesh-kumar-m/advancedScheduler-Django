@@ -1,11 +1,12 @@
 import requests
+from advancedScheduler.settings import WEATHER_TOKEN
 from weather.models import Forecast
 
 def _get_forecast_json():
     url = 'http://api.openweathermap.org/data/2.5/weather'
     encoded_city_name = 'Los%20Angeles'
     country_code = 'us'
-    access_token = 'd06aa9f745ef677039f24274fe0f3029'
+    access_token = WEATHER_TOKEN
   
     r = requests.get('{0}?q={1},{2}&APPID={3}'.format(
         url, 
